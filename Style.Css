@@ -1,102 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap");
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus objetivos do ano | Metas 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="conteudo-principal">
+        <h2 class="titulo-principal">Meus Objetivos do ano<span>_</span></h2>
+        
+        <!-- Botões / Abas -->
+        <div class="botoes">
+            <button class="botao ativo" data-aba="0">Cursos na Alura</button>
+            <button class="botao" data-aba="1">Criar projetos em Javascript</button>
+            <button class="botao" data-aba="2">Criar um portfolio</button>
+            <button class="botao" data-aba="3">Atualizar meu currículo</button>
+        </div>
 
-:root {
-  --cor-de-fundo: #004949;
-  --verde: #2d8faa;
-  --branco: #ffffff;
-  --botao-ativo: #5de1eb;
-  --botao-inativo: rgba(55, 86, 94, 0.671);
-  --texto-fundo: rgba(14, 94, 241, 0.3);
-}
+        <!-- Conteúdos das abas com metas e contadores -->
+        <div class="abas-textos">
+            <div class="aba-conteudo ativo" data-conteudo="0">
+                <h3 class="aba-conteudo-titulo-principal">📚 Estudar 4 cursos na Alura</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador" id="contador0">-- dias -- horas -- min -- seg</div>
+            </div>
+            <div class="aba-conteudo" data-conteudo="1">
+                <h3 class="aba-conteudo-titulo-principal">💻 Criar 5 projetos em Javascript</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador" id="contador1">-- dias -- horas -- min -- seg</div>
+            </div>
+            <div class="aba-conteudo" data-conteudo="2">
+                <h3 class="aba-conteudo-titulo-principal">🌟 Criar um portfolio com os meus 3 melhores projetos</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador" id="contador2">-- dias -- horas -- min -- seg</div>
+            </div>
+            <div class="aba-conteudo" data-conteudo="3">
+                <h3 class="aba-conteudo-titulo-principal">📄 Atualizar meu curriculo com os certificados da Alura</h3>
+                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+                <div class="contador" id="contador3">-- dias -- horas -- min -- seg</div>
+            </div>
+        </div>
+        <footer>🎯 Metas para 2025 • Foco e determinação</footer>
+    </section>
 
-body {
-  background-color: var(--cor-de-fundo);
-  color: var(--branco);
-  font-family: "Chakra Petch", sans-serif;
-}
-
-.conteudo-principal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  width: 109%;
-  margin: 0 auto;
-}
-
-.titulo-principal {
-  text-align: left;
-  width: 109%;
-  font-size: 32px;
-}
-
-.titulo-principal span {
-  color: var(--verde);
-}
-
-.botao {
-  font-family: "Crakra Petch", sans-serif;
-  background-color: var(--botao-inativo);
-  color: var(--branco);
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-  font-size: 18px;
-  align-items: center;
-  width: 109%;
-  border-bottom: 4px solid var(--botao-ativo);
-  border-left: 2px solid var(--botao-ativo);
-  border-right: 2px solid var(--botao-ativo);
-  border-top: none;
-}
-
-.botao:first-child {
-  border-radius: 40px 40px 0 0;
-}
-
-.botoes {
-  display: block;
-}
-@media screen and (min-width: 768px) {
-}
-@media screen and (min-width: 768px) {
-  .botoes {
-    display: flex;
-  }
-}
-.ativo {
-  background-color: var(--botao-ativo);
-  border-bottom: 4px solid var(--verde);
-}
-.abas-textos {
-  background-color: var(--texto-fundo);
-}
-.abas-textos {
-  background-color: var(--texto-fundo);
-  padding: 40px;
-  border-radius: 0 0 40px 40px;
-}
-.botao.ativo {
-  background-color: var(--botao-ativo);
-  border-bottom: 4px solid var(--verde);
-}
-.aba-conteudo.ativo {
-  display: block;
-}
-.aba-conteudo {
-  display: none;
-}
-.aba-conteudo-titulo-principal {
-  font-size: 28px;
-  text-align: center;
-}
-.aba-conteudo-titulo-secundario {
-  text-align: center;
-  color: var(--verde);
-  text-transform: uppercase;
-}
-.contador {
-  font-size: 20px;
-  text-align: center;
-}
+    <script src="main.js"></script>
+</body>
+</html>
