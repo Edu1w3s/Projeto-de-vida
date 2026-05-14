@@ -1,49 +1,200 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus objetivos do ano | Metas 2025</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section class="conteudo-principal">
-        <h2 class="titulo-principal">Meus Objetivos do ano<span>_</span></h2>
-        
-        <!-- Botões / Abas -->
-        <div class="botoes">
-            <button class="botao ativo" data-aba="0">Cursos na Alura</button>
-            <button class="botao" data-aba="1">Criar projetos em Javascript</button>
-            <button class="botao" data-aba="2">Criar um portfolio</button>
-            <button class="botao" data-aba="3">Atualizar meu currículo</button>
-        </div>
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap");
 
-        <!-- Conteúdos das abas com metas e contadores -->
-        <div class="abas-textos">
-            <div class="aba-conteudo ativo" data-conteudo="0">
-                <h3 class="aba-conteudo-titulo-principal">📚 Estudar 4 cursos na Alura</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-                <div class="contador" id="contador0">-- dias -- horas -- min -- seg</div>
-            </div>
-            <div class="aba-conteudo" data-conteudo="1">
-                <h3 class="aba-conteudo-titulo-principal">💻 Criar 5 projetos em Javascript</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-                <div class="contador" id="contador1">-- dias -- horas -- min -- seg</div>
-            </div>
-            <div class="aba-conteudo" data-conteudo="2">
-                <h3 class="aba-conteudo-titulo-principal">🌟 Criar um portfolio com os meus 3 melhores projetos</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-                <div class="contador" id="contador2">-- dias -- horas -- min -- seg</div>
-            </div>
-            <div class="aba-conteudo" data-conteudo="3">
-                <h3 class="aba-conteudo-titulo-principal">📄 Atualizar meu curriculo com os certificados da Alura</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-                <div class="contador" id="contador3">-- dias -- horas -- min -- seg</div>
-            </div>
-        </div>
-        <footer>🎯 Metas para 2025 • Foco e determinação</footer>
-    </section>
+:root {
+    --cor-de-fundo: #004949;
+    --verde: #2d8faa;
+    --branco: #ffffff;
+    --botao-ativo: #5de1eb;
+    --botao-inativo: rgba(55, 86, 94, 0.671);
+    --texto-fundo: rgba(14, 94, 241, 0.3);
+    --sombra: rgba(0, 0, 0, 0.2);
+}
 
-    <script src="main.js"></script>
-</body>
-</html>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: "Chakra Petch", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 48px;
+    padding: 2rem 1.5rem;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 20px 35px var(--sombra);
+}
+
+.titulo-principal {
+    text-align: center;
+    width: 100%;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    border-left: 5px solid var(--verde);
+    padding-left: 1rem;
+}
+
+@media (min-width: 768px) {
+    .titulo-principal {
+        font-size: 2.8rem;
+        text-align: left;
+    }
+}
+
+.titulo-principal span {
+    color: var(--verde);
+    animation: pisca 0.9s infinite;
+}
+
+@keyframes pisca {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* BOTÕES (abas) */
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .botoes {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+.botao {
+    font-family: "Chakra Petch", sans-serif;
+    background-color: var(--botao-inativo);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-bottom: 4px solid var(--botao-ativo);
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
+    border-radius: 20px 20px 12px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+    background-color: rgba(93, 225, 235, 0.3);
+}
+
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+    color: #003333;
+    box-shadow: 0 4px 12px rgba(93, 225, 235, 0.4);
+}
+
+/* ÁREA DE TEXTOS E CONTEÚDOS DAS ABAS */
+.abas-textos {
+    background-color: var(--texto-fundo);
+    padding: 2rem 1.5rem;
+    border-radius: 32px;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s;
+}
+
+.aba-conteudo {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.aba-conteudo.ativo {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.aba-conteudo-titulo-principal {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: #f0f9ff;
+}
+
+.aba-conteudo-titulo-secundario {
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.contador {
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 60px;
+    font-family: monospace;
+    letter-spacing: 2px;
+    color: #c3f0ff;
+    display: inline-block;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2), 0 6px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 550px) {
+    .contador {
+        font-size: 1.1rem;
+        padding: 0.7rem;
+    }
+    .aba-conteudo-titulo-principal {
+        font-size: 1.3rem;
+    }
+    .conteudo-principal {
+        padding: 1.2rem;
+    }
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    text-align: center;
+    opacity: 0.7;
+}
